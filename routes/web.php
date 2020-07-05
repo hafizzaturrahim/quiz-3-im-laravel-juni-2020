@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.master');
-});
+/*Route::get('/', function () {
+    redirect url('/images/erd_quiz3.png');
+});*/
+
+Route::redirect('/', '/images/erd_quiz3.png');
 
 Route::get('/artikel/create', 'ArtikelController@create'); // menampilkan halaman form
 Route::post('/artikel', 'ArtikelController@store'); // menyimpan data

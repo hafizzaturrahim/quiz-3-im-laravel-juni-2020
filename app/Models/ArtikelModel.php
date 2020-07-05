@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\DB;
 
 class ArtikelModel{
 	public static function get_all(){
-		$question = DB::table('artikel')->get();
-		return $question;
+		$artikel = DB::table('artikel')->get();
+		return $artikel;
 	}
 
 	public static function save($data){
@@ -19,14 +19,10 @@ class ArtikelModel{
 	}
 
 	public static function update($id, $request){
-		$question = DB::table('artikel')
+		$artikel = DB::table('artikel')
 						->where('id_artikel',$id)
-						->update([
-							'judul'	=> $request['judul'],
-							'isi' 	=> $request['isi']
-
-						]);
-		return $question;
+						->update($request);
+		return $artikel;
 	}
 
 	public static function delete($id){
