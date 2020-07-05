@@ -28,7 +28,7 @@ class ArtikelController extends Controller
         $data = array(
             'judul'     => $judul,
             'isi'       => $request->input('isi'),
-            'slug'      => Str::slug($judul,"-"),
+            'slug'      => strtolower(Str::slug($judul,"-")),
             'tag'       => $request->input('tag'),
             'created_at'=> Carbon::now(),
             'updated_at'=> Carbon::now(),
@@ -49,7 +49,7 @@ class ArtikelController extends Controller
         $data = array(
             'judul'     => $judul,
             'isi'       => $request->input('isi'),
-            'slug'      => Str::slug($judul,"-"),
+            'slug'      => strtolower(Str::slug($judul,"-")),
             'tag'       => $request->input('tag'),
             'updated_at'=> Carbon::now()
         );
