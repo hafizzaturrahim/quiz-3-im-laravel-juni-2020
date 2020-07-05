@@ -3,18 +3,34 @@ namespace App\Models;
 use Illuminate\Support\Facades\DB;
 
 class ArtikelModel{
-	public static function save($data){
-		$new_answer = DB::table('answer')->insert($data);
-		return $new_answer;
+	public static function get_all(){
+		$question = DB::table('artikel')->get();
+		return $question;
 	}
 
-	public static function get_data($id){
-		$result = DB::table('answer')->where('id_question',$id)->get();
+	public static function save($data){
+		$new_artikel = DB::table('artikel')->insert($data);
+		return $new_artikel;
+	}
+
+	public static function get_single_data($id){
+		$result = DB::table('artikel')->where('id_artikel',$id)->first();
 		return $result;
 	}
 
+	public static function update($id, $request){
+		$question = DB::table('artikel')
+						->where('id_artikel',$id)
+						->update([
+							'judul'	=> $request['judul'],
+							'isi' 	=> $request['isi']
+
+						]);
+		return $question;
+	}
+
 	public static function delete($id){
-		$deleted = DB::table('answer')->where('id_question',$id)->delete();
+		$deleted = DB::table('artikel')->where('id_artikel',$id)->delete();
 		return $deleted;
 	}
 

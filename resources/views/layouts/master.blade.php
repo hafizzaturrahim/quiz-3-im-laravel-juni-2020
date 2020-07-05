@@ -332,8 +332,8 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
-
+          <!-- <h1 class="h3 mb-4 text-gray-800">Blank Page</h1> -->
+          @yield('content')
         </div>
         <!-- /.container-fluid -->
 
@@ -389,11 +389,8 @@
 
   <!-- Custom scripts for all pages-->
   <script src="{{asset('/sbadmin2/js/sb-admin-2.min.js')}}"></script>
-
-  <!-- script tambahan sweet alert, bukan dari bawaan sb-admin-2 -->
   @stack('scripts')
 
-  <script src="js/swal.min.js"></script>
 
 </body>
 
