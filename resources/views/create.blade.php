@@ -19,7 +19,7 @@
 			</div>
 			<div class="form-group">
 				<label for="title">Tags :</label>
-				<input type="text" class="form-control" id="title" name="tag" placeholder="dipisahkan dengan spasi">
+				<input type="text" class="form-control" id="tag" name="tag" placeholder="dipisahkan dengan spasi" required="">
 			</div>
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>
